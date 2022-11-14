@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgtr</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Budgtr ALL</h1>
+        <nav>
+            <a href="/budget/new"><button>Create a New Item</button></a>
+        </nav>
+        <table><% for(let i = 0; i < allBudget.length; i++) { %>
+            <tr>
+                <td>
+                    <%=allBudget[i].date %>
+                </td>
+                <td>
+                    <a href="/budget/<%=i%>"><%=allBudget[i].name %></a>
+                </td>
+                <td>
+                    <%=allBudget[i].amount %>
+                </td>
+            </tr>
+        <% } %></table>
+
+    </div>
+</body>
+</html>
