@@ -14,8 +14,14 @@
         <nav>
             <a href="/budget/new"><button>Create a New Item</button></a>
         </nav>
+        <h5>Bank Account: <% const bankAccount = allBudget.reduce(function(prev, cur) {
+            return prev + cur.amount
+          }, 0)  %> </h5>
+
+        
+
         <table><% for(let i = 0; i < allBudget.length; i++) { %>
-            <tr>
+            <tr>g
                 <td>
                     <%=allBudget[i].date %>
                 </td>
@@ -31,3 +37,4 @@
     </div>
 </body>
 </html>
+
