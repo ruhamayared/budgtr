@@ -15,6 +15,7 @@ app.use(methodOverride("_method"))
 app.get('/budget', (req, res) => {
     res.render("index.ejs", {
         allBudget:budget
+        
     } )
 })
 
@@ -25,8 +26,8 @@ app.get('/budget/new', (req, res) => {
 
 // Create Route - POST
 app.post('/budget', (req, res) => {
-    // budget.push(req.body)
-    console.log(req.body)
+    budget.push(req.body)
+    
     res.redirect("/budget")
 })
 
