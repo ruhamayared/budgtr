@@ -14,15 +14,20 @@
         <nav>
             <a href="/budget/new"><button>Create a New Item</button></a>
         </nav>
-        <h5><% let bankAccount = 0;
-            for (let i = 0; i < allBudget.length; i++)
-            {
-                bankAccount += parseInt(allBudget[i].amount)
-            }
-            console.log( "Bank Account Total: $", bankAccount);  %> 
-        </h5>
-        <div id="total">Bank Account: <%=bankAccount%> </div>
+        <% let bankAccount = 0
+        for (let i = 0; i < allBudget.length; i++)
+        {bankAccount += parseInt(allBudget[i].amount)}%> 
+        
+        <h4 id="total">Bank Account: <%=bankAccount%> </h4>
 
+        <script>
+            const bankTotal = document.getElementById("total")
+            if (<%= bankAccount%> < 0){
+                bankTotal.style.backgroundColor = "red"
+            }else if (<%= bankAccount%> > 1000){
+                bankTotal.style.backgroundColor = "green"
+            }
+        </script>
 
         <table><% for(let i = 0; i < allBudget.length; i++) { %>
             <tr>

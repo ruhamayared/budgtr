@@ -5,7 +5,6 @@ const methodOverride = require("method-override")
 
 const app = express()
 
-let bankAccount = 0
 
 //Middleware
 app.use(express.urlencoded({extended: true}))
@@ -15,9 +14,7 @@ app.use(methodOverride("_method"))
 // INDEX ROUTE - GET
 app.get('/budget', (req, res) => {
     res.render("index.ejs", {
-        allBudget:budget,
-        account:bankAccount
-        
+        allBudget:budget
     } )
 })
 
@@ -41,7 +38,6 @@ app.get('/budget/:index', (req, res) => {
         index: req.params.index
     })
 })
-
 
 
 const PORT = process.env.PORT || 3000
