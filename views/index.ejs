@@ -15,11 +15,14 @@
             <a href="/budget/new"><button>Create a New Item</button></a>
         </nav>
         <h5><% let bankAccount = 0;
-            for (let i = 0; i< allBudget.length; i++)
+            for (let i = 0; i < allBudget.length; i++)
             {
                 bankAccount += parseInt(allBudget[i].amount)
             }
-            console.log( "Bank Account Total: $", bankAccount);  %> </h5>
+            console.log( "Bank Account Total: $", bankAccount);  %> 
+        </h5>
+        <div id="total">Bank Account: <%=bankAccount%> </div>
+
 
         <table><% for(let i = 0; i < allBudget.length; i++) { %>
             <tr>

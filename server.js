@@ -5,6 +5,7 @@ const methodOverride = require("method-override")
 
 const app = express()
 
+let bankAccount = 0
 
 //Middleware
 app.use(express.urlencoded({extended: true}))
@@ -14,7 +15,8 @@ app.use(methodOverride("_method"))
 // INDEX ROUTE - GET
 app.get('/budget', (req, res) => {
     res.render("index.ejs", {
-        allBudget:budget
+        allBudget:budget,
+        account:bankAccount
         
     } )
 })
