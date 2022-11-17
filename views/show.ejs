@@ -15,7 +15,7 @@
         <h5>Name: <%=item.name %></h5>
         <h5>From: <%=item.from %></h5> 
         <h5>Amount: <%=item.amount %></h5>
-        <h5>Tags: <%=item.tags %></h5> 
+        <h5>Tags: <%=item.tags.join(", ") %></h5> 
         
         <a href="/budget"><button>Return to Budget ALL</button></a>
     </div>
